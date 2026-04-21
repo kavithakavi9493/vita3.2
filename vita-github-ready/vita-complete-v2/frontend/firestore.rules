@@ -1,0 +1,81 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── V3 Core Rules ──────────────────────────────────────────────
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /user_responses/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /orders/{orderId} {
+      allow read: if request.auth != null &&
+        (resource.data.userId == request.auth.uid || request.auth.token.admin == true);
+      allow write: if false;
+    }
+    match /activations/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+    match /dailyLogs/{userId}/logs/{date} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /weeklyCheckins/{userId}/weeks/{week} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /coupons/{code} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /quizMappings/{bodyType} { allow read: if true; }
+    match /taskTemplates/{bodyType} { allow read: if true; }
+    match /appConfig/{doc} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /whatsappQueue/{docId} { allow read, write: if false; }
+
+    // ── Phase 1: Subscriptions & Referrals ─────────────────────────
+    match /subscriptions/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /referrals/{code} {
+      allow read:  if true;
+      allow write: if request.auth != null;
+    }
+    match /referralEvents/{eventId} {
+      allow read: if request.auth != null &&
+        (resource.data.referrerId == request.auth.uid ||
+         resource.data.refereeId  == request.auth.uid);
+      allow write: if false;
+    }
+
+    // ── Phase 2: New Collections ────────────────────────────────────
+    match /reviews/{reviewId} {
+      allow read: if resource.data.approved == true;
+      allow write: if false;
+    }
+    match /codBlockedPincodes/{pincode} { allow read: if true; }
+
+    // ── V2 Improvements: Symptom Logs ──────────────────────────────
+    match /symptomLogs/{userId}/logs/{date} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ── V2 Improvements: Chat Memory ───────────────────────────────
+    match /chatMemory/{userId}/messages/{msgId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ── V2 Improvements: VitaScore History ─────────────────────────
+    match /vitaScoreHistory/{userId}/history/{date} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+  }
+}

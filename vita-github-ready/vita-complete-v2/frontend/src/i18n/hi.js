@@ -1,0 +1,61 @@
+/** VI — Hindi Translations (hi) */
+const hi = {
+  app: { name: 'VI विटा इंटेलिजेंस', tagline: 'भारत का पुरुष स्वास्थ्य मंच' },
+  common: {
+    loading: 'लोड हो रहा है...', error: 'कुछ गलत हो गया', save: 'सेव करें',
+    cancel: 'रद्द करें', back: 'वापस', submit: 'सबमिट', confirm: 'पुष्टि करें',
+    close: 'बंद', yes: 'हाँ', no: 'नहीं', view_all: 'सब देखें',
+    copy: 'कॉपी', copied: 'कॉपी हो गया!', share: 'शेयर', continue: 'जारी रखें',
+    done: 'हो गया', rupee: '₹', per_month: '/महीना',
+  },
+  nav: {
+    dashboard: 'डैशबोर्ड', orders: 'ऑर्डर', profile: 'प्रोफाइल',
+    subscription: 'सब्सक्रिप्शन', referral: 'रेफर करें', chat: 'VI से पूछें',
+  },
+  chat: {
+    title: 'VI स्वास्थ्य सहायक', subtitle: 'आपका व्यक्तिगत आयुर्वेदिक स्वास्थ्य कोच',
+    placeholder: 'अपने स्वास्थ्य के बारे में कुछ भी पूछें...', send: 'भेजें',
+    typing: 'VI सोच रहा है...', free_label: 'मुफ़्त · AI द्वारा संचालित',
+    greeting: 'नमस्ते! मैं आपका VI स्वास्थ्य कोच हूँ। पुरुषों के स्वास्थ्य, सप्लीमेंट्स या बेहतर परिणामों के बारे में कुछ भी पूछें। 🙏',
+    greeting_personalized: 'नमस्ते {{name}}! आपके {{bodyType}} प्रोफाइल (VitaScore {{score}}) के आधार पर, मैं आपकी मदद के लिए यहाँ हूँ।',
+    suggested: 'सुझाए गए प्रश्न',
+    prompts: {
+      energy: 'मेरी ऊर्जा कम क्यों है?', product: 'मेरे लिए सबसे अच्छा प्रोडक्ट कौन सा है?',
+      results: 'रिजल्ट कब दिखेगा?', combine: 'क्या 2 प्रोडक्ट साथ ले सकते हैं?',
+      missed: '3 दिन मिस हुए — अब क्या करूं?',
+    },
+    error: 'जवाब नहीं मिला। फिर कोशिश करें।', limit_reached: 'सीमा पूरी हो गई। थोड़ी देर बाद कोशिश करें।',
+  },
+  subscription: {
+    title: 'मेरा सब्सक्रिप्शन', subtitle: 'सब्सक्राइब करें और हर महीने 15% बचाएं', badge: 'सबसे अच्छी डील',
+    save_label: 'सिंगल ऑर्डर से {{percent}}% कम', monthly: 'मासिक',
+    status: { active: 'सक्रिय', paused: 'रुका हुआ', cancelled: 'रद्द', created: 'सक्रियण बाकी', expired: 'समाप्त' },
+    next_billing: 'अगला भुगतान', cycle: '12 में से {{count}} साइकिल',
+    pause: 'सब्सक्रिप्शन रोकें', resume: 'फिर शुरू करें', cancel: 'रद्द करें', skip: 'इस महीना स्किप करें',
+    history: 'भुगतान इतिहास', no_sub: 'कोई सक्रिय सब्सक्रिप्शन नहीं',
+    subscribe_cta: 'सब्सक्राइब करें और ₹{{amount}}/माह बचाएं',
+    features: { discount: 'हर महीने 15% छूट', auto_renew: 'मासिक स्वतः नवीनीकरण', cancel: 'कभी भी रद्द करें', pause: 'रोकें या स्किप करें' },
+    cancel_confirm: 'क्या आप निश्चित हैं? आप 15% सब्सक्राइबर छूट खो देंगे।',
+    pause_confirm: 'सब्सक्रिप्शन रोकें? फिर शुरू करने तक कोई चार्ज नहीं।',
+    skip_confirm: 'इस महीना स्किप करें? अगले साइकिल तक कोई चार्ज नहीं।',
+    paused_message: 'सब्सक्रिप्शन रुका हुआ है। कभी भी शुरू करें।',
+    cancel_reason: 'कारण बताएं (वैकल्पिक)',
+  },
+  referral: {
+    title: 'रेफर करें और कमाएं', subtitle: '₹200 दें। ₹200 पाएं।',
+    your_code: 'आपका रेफरल कोड', share_message: 'दोस्तों के साथ शेयर करें',
+    how_it_works: 'यह कैसे काम करता है', step1: 'अपना कोड शेयर करें', step2: 'दोस्त साइनअप करें और ऑर्डर करें', step3: 'दोनों को ₹200 मिलेंगे!',
+    you_earn: 'आप कमाएंगे', friend_gets: 'दोस्त को मिलेगा', total_earned: 'कुल कमाई', total_referrals: 'कुल रेफरल', successful: 'सफल', pending: 'बाकी',
+    whatsapp_share: 'WhatsApp पर शेयर करें', copy_code: 'कोड कॉपी करें', copy_link: 'लिंक कॉपी करें',
+    no_referrals: 'अभी तक कोई रेफरल नहीं। शेयर करना शुरू करें!',
+    credited: 'जमा हो गया', available_credit: 'उपलब्ध क्रेडिट', use_at_checkout: 'चेकआउट पर स्वतः लागू',
+    history_title: 'रेफरल इतिहास', invite_more: 'और दोस्तों को आमंत्रित करें',
+    terms: '* ₹500 से ऊपर के पहले ऑर्डर पर क्रेडिट लागू',
+  },
+  language: { title: 'भाषा', select: 'भाषा चुनें', changed: 'भाषा अपडेट हो गई' },
+  body_type: {
+    HIGH_STRESS_LOW_VITALITY: 'उच्च तनाव / कम ऊर्जा', HORMONAL_DECLINE: 'हार्मोनल गिरावट',
+    PERFORMANCE_DEFICIT: 'प्रदर्शन कमी', AGE_RELATED_DROP: 'उम्र से जुड़ी गिरावट', PEAK_PERFORMANCE: 'पीक परफॉर्मेंस',
+  },
+}
+export default hi
